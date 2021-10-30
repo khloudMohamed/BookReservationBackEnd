@@ -38,8 +38,8 @@ namespace BookReservation.Repository.Queries
                         Resource = resource
                     };
                     var result = bookReservationContext.Bookings.Add(booking);
-                    //Console.WriteLine();
                     bookReservationContext.SaveChanges();
+                    Console.WriteLine("Email SENT TO admin@admin.com FOR CREATED BOOKING WITH ID" + booking.Id);
                     return true;
                 }
                 return false;
