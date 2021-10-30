@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "BookReservation": "Data Source=DESKTOP-7G0CQCT;Initial Catalog=BookReservation;User Id=sa;password=khloud123"
+  }
+}
