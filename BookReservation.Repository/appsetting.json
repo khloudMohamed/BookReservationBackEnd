@@ -1,5 +1,5 @@
 ﻿{
   "ConnectionStrings": {
-    "BookReservation": "Data Source=DESKTOP-7G0CQCT;Initial Catalog=BookReservation;User Id=sa;password=khloud123"
+    "BookReservation": "Data Source=GIS-KHLOUD\\SQL2014;Initial Catalog=BookReservation;User Id=sa;password=Mcs@in123"
   }
 }

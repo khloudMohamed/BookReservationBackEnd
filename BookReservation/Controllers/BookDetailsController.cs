@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using BookReservation.Models;
 using Microsoft.Extensions.Configuration;
 using BookReservation.Repository.Interfaces;
 using BookReservation.Repository.Entities;
