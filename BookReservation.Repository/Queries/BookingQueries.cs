@@ -29,7 +29,7 @@ namespace BookReservation.Repository.Queries
                 var MaxQuantity = resource.Quantity;
                 var tempBookings = bookReservationContext.Bookings.Where(f => (f.DateFrom <= newbooking.DateFrom) && (f.DateTo >= newbooking.DateTo)).ToList();
                 totalQuantity = tempBookings.Select(f => f.BookingQuantity).Sum();
-                if (ValidateNewBooking(totalQuantity, MaxQuantity)) {
+                if (ValidateNewBooking(totalQuantity, MaxQuantity,,newbooking.BookingQuantity)) {
                     Booking booking = new Booking()
                     {
                         DateFrom = newbooking.DateFrom,
@@ -50,10 +50,14 @@ namespace BookReservation.Repository.Queries
            
         }
 
-        public Boolean ValidateNewBooking(int totalQuantity,int MaxQuantity)
+        public Boolean ValidateNewBooking(int totalQuantity,int MaxQuantity,int BookingQuantity)
         {
             try {
+                if (BookingQuantity > MaxQuantity)
+                    return false;
                 if ((MaxQuantity - totalQuantity) <= 0)
+                    return false;
+                if ((MaxQuantity - totalQuantity) < BookingQuantity)
                     return false;
                 return true;
             }
